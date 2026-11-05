@@ -1,0 +1,9 @@
+keyboard
+mouse
+platformdirs
+pygame-ce
+pygame_gui
+pyinstaller
+python-dotenv
+pywinctl
+pillow
