@@ -17,8 +17,8 @@ with an optional prayer to the almighty omnisiah
 ```
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     brew install python
-    python -m ensurepip --upgrade
-    python -m venv .venv  
+    python3 -m ensurepip --upgrade
+    python3 -m venv .venv  
     source .venv/bin/activate  
     pip install -r requirements.txt  
     pyinstaller main.spec

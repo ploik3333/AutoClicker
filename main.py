@@ -1,4 +1,5 @@
-import atexit, mouse, time, sys
+import atexit, time, sys
+import pyautogui as mouse
 from pygame_gui.elements import UIButton, UICheckBox, UITextEntryLine
 from consts import *
 from pygame.locals import *
@@ -21,13 +22,13 @@ atexit.register(keyboard.unhook_all)
 def click():
     while True:
         CLICK_EVENT.wait()
-        mouse.click('left')
+        mouse.click()
         if space.value > 0.1:
             time.sleep(space.value)
         elif space.value == 0:
             pass
         else:
-            target = time.perf_counter_ns() + space.value * 1e9 - 2e4
+            target = time.perf_counter_ns() + space.value * 1e9
             while time.perf_counter_ns() < target:
                 pass
 
@@ -39,10 +40,8 @@ click_thread.value.start()
 def on_start_hook(e: keyboard.KeyboardEvent):
     if (e.event_type == keyboard.KEY_DOWN):
         if not CLICK_EVENT.is_set():
-            print("running")
             CLICK_EVENT.set()
         else:
-            print("stopping")
             CLICK_EVENT.clear()
 
 

@@ -1,5 +1,5 @@
 keyboard
-mouse
+pyautogui
 platformdirs
 pygame-ce
 pygame_gui
@@ -7,3 +7,4 @@ pyinstaller
 python-dotenv
 pywinctl
 pillow
+pip
